@@ -11,6 +11,7 @@ public final class PluginExample extends JavaPlugin {
         // Plugin startup logic
         getLogger().info("플러그인이 활성화되었습니다.");
         Objects.requireNonNull(this.getCommand("test")).setExecutor(new MyCommand());
+        Objects.requireNonNull(this.getCommand("openInventory")).setExecutor(new MyCommand());
     }
 
     @Override
