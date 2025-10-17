@@ -50,7 +50,7 @@ public final class PluginExample extends JavaPlugin implements Listener{
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getNewScoreboard();
         Objective o = board.registerNewObjective("My Server","dummy");
-        o.setDisplayName(ChatColor.BOLD + "My Server");
+        o.setDisplayName(ChatColor.BOLD + "My Sever");
         o.setDisplaySlot(DisplaySlot.SIDEBAR);
         Score score = o.getScore("Players:");
         score.setScore(Bukkit.getOnlinePlayers().size());
@@ -62,6 +62,18 @@ public final class PluginExample extends JavaPlugin implements Listener{
             Score score = online.getScoreboard().getObjective(DisplaySlot.SIDEBAR).getScore("Players:");
             score.setScore(Bukkit.getOnlinePlayers().size());
         }
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent e) {
+        Player player = e.getPlayer();
+    e.setQuitMessage(ChatColor.GREEN + player.getName() + ChatColor.GREEN + " Left The Server");
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent e) {
+        Player player = e.getPlayer();
+        e.setJoinMessage(ChatColor.AQUA + player.getName() + ChatColor.AQUA + "! Welcome To The Server");
     }
 
 }
