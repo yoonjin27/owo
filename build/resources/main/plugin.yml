@@ -1,0 +1,10 @@
+name: pluginExample
+version: '1.0-SNAPSHOT'
+main: org.first.pluginExample.PluginExample
+api-version: '1.21'
+author: [ Gloomn ]
+description: Example Plugin
+commands:
+  test:
+    description: "플러그인의 작동 여부를 알려줍니다."
+    usage: /test
